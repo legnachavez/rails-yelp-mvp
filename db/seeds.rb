@@ -11,7 +11,10 @@ category_array = ["chinese", "italian", "japanese", "french", "belgian"]
 
 puts "Restaurant"
 5.times do
-  Restaurant.create(name: Faker::Restaurant.name, address: Faker::Restaurant.address, category: category_array.sample, phone_number: Faker::PhoneNumber.phone_number)
+#   Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Restaurant.address, category: category_array.sample, phone_number: Faker::PhoneNumber.phone_number)
+# end
+
+Restaurant.create!(name: Faker::Restaurant.name, address: Faker::Address.street_address, category: category_array.sample, phone_number: Faker::PhoneNumber.phone_number)
 end
 
 puts "finish!"
